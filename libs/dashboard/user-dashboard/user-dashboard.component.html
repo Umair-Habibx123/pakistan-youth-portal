@@ -1,0 +1,188 @@
+<body class="font-sans">
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar (Hidden on small screens, appears as an overlay) -->
+    <aside
+      class="fixed inset-y-0 left-0 w-64 p-5 border-r-2 shadow-lg transform -translate-x-full transition-transform duration-300 lg:relative lg:translate-x-0 flex flex-col z-50"
+      [ngClass]="{
+        'translate-x-0': isSidebarOpen,
+        '-translate-x-full': !isSidebarOpen
+      }"
+      [ngStyle]="{ 'background-color': colors.background }"
+    >
+      <img
+        src="../../../../assets/images/logo.png"
+        class="w-full h-auto"
+        alt="Logo"
+      />
+
+      <nav class="mt-5 lg:mt-10 flex-1 overflow-y-auto">
+        <a
+          class="block p-2 lg:p-3 rounded-md cursor-pointer"
+          [ngStyle]="{
+            color: currentSection === 'overview' ? colors.white : colors.text,
+            backgroundColor:
+              currentSection === 'overview' ? colors.primary : 'transparent'
+          }"
+          (click)="loadContent('overview'); toggleSidebar()"
+        >
+          <i class="fas fa-border-all mr-2"></i>
+          <span class="lg:inline">Overview</span>
+        </a>
+        <a
+          class="block p-2 lg:p-3 rounded-md cursor-pointer"
+          [ngStyle]="{
+            color: currentSection === 'applied' ? colors.white : colors.text,
+            backgroundColor:
+              currentSection === 'applied' ? colors.primary : 'transparent'
+          }"
+          (click)="loadContent('applied'); toggleSidebar()"
+        >
+          <i class="fas fa-briefcase mr-2"></i>
+          <span class="lg:inline">Applied Jobs</span>
+        </a>
+        <a
+          class="block p-2 lg:p-3 rounded-md cursor-pointer"
+          [ngStyle]="{
+            color: currentSection === 'favourite' ? colors.white : colors.text,
+            backgroundColor:
+              currentSection === 'favourite' ? colors.primary : 'transparent'
+          }"
+          (click)="loadContent('favourite'); toggleSidebar()"
+        >
+          <i class="fas fa-bookmark mr-2"></i>
+          <span class="lg:inline">Favourite Jobs</span>
+        </a>
+        <a
+          class="block p-2 lg:p-3 rounded-md cursor-pointer"
+          [ngStyle]="{
+            color: currentSection === 'alerts' ? colors.white : colors.text,
+            backgroundColor:
+              currentSection === 'alerts' ? colors.primary : 'transparent'
+          }"
+          (click)="loadContent('alerts'); toggleSidebar()"
+        >
+          <i class="fas fa-bell mr-2"></i>
+          <span class="lg:inline">Job Alerts</span>
+        </a>
+      </nav>
+      <button
+        class="block lg:hidden absolute top-4 right-4 p-2 bg-gray-200 rounded-md"
+        (click)="toggleSidebar()"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="mt-auto">
+        <a
+          class="block p-2 lg:p-3 rounded-md cursor-pointer"
+          [ngStyle]="{
+            color: currentSection === 'privacy' ? colors.white : colors.text,
+            backgroundColor:
+              currentSection === 'privacy' ? colors.primary : 'transparent'
+          }"
+          (click)="loadContent('privacy')"
+        >
+          <i class="fas fa-book-open mr-2"></i>
+          <span class="lg:inline">Privacy Policy</span>
+        </a>
+        <a
+          class="block p-2 lg:p-3 rounded-md cursor-pointer"
+          [ngStyle]="{
+            color: currentSection === 'settings' ? colors.white : colors.text,
+            backgroundColor:
+              currentSection === 'settings' ? colors.primary : 'transparent'
+          }"
+          (click)="loadContent('settings')"
+        >
+          <i class="fas fa-gear mr-2"></i>
+          <span class="lg:inline">Settings</span>
+        </a>
+        <div class="flex items-center mt-5 p-2 lg:p-3 border-t">
+          <img
+            src="../../../../assets/images/user.png"
+            class="h-8 w-8 lg:h-10 lg:w-10 rounded-full"
+            alt="User"
+          />
+          <div class="ml-2 lg:ml-3 lg:block">
+            <p class="font-semibold">Olivia Rhye</p>
+            <p [ngStyle]="{ color: colors.gray400 }" class="text-sm">
+              oliviarhye&#64;mail.com
+            </p>
+          </div>
+        </div>
+        <button
+          [ngStyle]="{ color: colors.white, 'background-color': colors.text }"
+          class="w-full mt-3 p-2 lg:p-3 rounded-md flex items-center justify-center"
+        >
+          <i class="fas fa-sign-out-alt lg:mr-8"></i>
+          <span class="lg:inline">Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Overlay for mobile view -->
+    <div
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity lg:hidden"
+      *ngIf="isSidebarOpen"
+      (click)="toggleSidebar()"
+    ></div>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-screen overflow-hidden">
+      <!-- Navbar with toggle button -->
+      <nav class="border-b-2 px-4 lg:px-8">
+        <div class="flex flex-wrap justify-between items-center p-2 lg:p-4">
+          <button class="p-2 lg:hidden" (click)="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="flex-1 min-w-0">
+            <h1 class="text-xl lg:text-2xl font-bold truncate">
+              {{ getTitle(currentSection) }}
+            </h1>
+
+            <p
+              [ngStyle]="{ color: colors.subtitle }"
+              class="mt-1 text-sm lg:text-base truncate"
+            >
+              Here are the details of your {{ getTitle(currentSection) }}
+            </p>
+          </div>
+
+          <div class="flex items-center">
+            <button class="p-2">
+              <i class="far fa-bell"></i>
+            </button>
+            <div
+              class="relative ml-3 flex flex-row justify-center items-center"
+            >
+              <img
+                src="../../../../assets/images/user.png"
+                class="h-8 w-8 lg:h-10 lg:w-10 rounded-full cursor-pointer"
+                alt="User"
+              />
+              <i class="fas fa-chevron-down ml-2 hidden lg:block"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Dynamic Content Area -->
+      <div
+        id="main-content"
+        [ngStyle]="{ 'background-color': colors.dashboardBg }"
+        class="flex-1 overflow-y-auto overflow-x-hidden"
+      >
+        <ng-container [ngSwitch]="currentSection">
+          <app-overview *ngSwitchCase="'overview'"></app-overview>
+          <app-applied-jobs *ngSwitchCase="'applied'"></app-applied-jobs>
+          <app-favourite-jobs *ngSwitchCase="'favourite'"></app-favourite-jobs>
+          <app-job-alerts *ngSwitchCase="'alerts'"></app-job-alerts>
+          <app-privacy-policy *ngSwitchCase="'privacy'"></app-privacy-policy>
+          <app-settings *ngSwitchCase="'settings'"></app-settings>
+          <div *ngSwitchDefault>
+            Welcome to the Dashboard. Select an option from the sidebar.
+          </div>
+        </ng-container>
+      </div>
+    </main>
+  </div>
+</body>

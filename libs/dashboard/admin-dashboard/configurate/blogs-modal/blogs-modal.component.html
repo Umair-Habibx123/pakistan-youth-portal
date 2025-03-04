@@ -1,0 +1,63 @@
+<div
+  *ngIf="isModalOpen"
+  [ngStyle]="{ 'background-color': colors.modalBg }"
+  class="fixed inset-0 flex items-center justify-center p-4"
+  (click)="closeModal()"
+>
+  <div
+    [ngStyle]="{ 'background-color': colors.background }"
+    class="p-6 rounded-lg shadow-lg max-w-lg w-full mx-4"
+    (click)="$event.stopPropagation()"
+  >
+    <!-- Modal Header -->
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg font-semibold">Add New Blog</h2>
+      <button (click)="closeModal()" class="text-lg font-bold">×</button>
+    </div>
+
+    <!-- Publish Date Input -->
+    <div class="mt-4">
+      <label class="block font-medium mb-2">Publish Date</label>
+      <input type="date" class="w-full p-3 border rounded-lg" />
+    </div>
+
+    <!-- Blog Heading Input -->
+    <div class="mt-4">
+      <label class="block font-medium mb-2">Publish Heading</label>
+      <input
+        type="text"
+        class="w-full p-3 border rounded-lg"
+        placeholder="Enter blog heading"
+      />
+    </div>
+
+    <!-- Blog Description Textarea -->
+    <div class="mt-4">
+      <label class="block font-medium mb-2">Blog Description</label>
+      <textarea
+        class="w-full p-3 border rounded-lg resize-none h-24"
+        placeholder="Write here the address of marketplace"
+      ></textarea>
+    </div>
+
+    <!-- Blog Image Upload -->
+    <div class="mt-4">
+      <label class="block font-medium mb-2">Blog Image</label>
+      <div
+        class="border-dashed border-2 h-28 p-4 sm:p-6 flex flex-col items-center justify-center rounded-lg"
+      >
+        <i class="fas fa-upload mr-2"></i>
+        <p class="font-medium text-center">Upload Image</p>
+        <p class="text-sm text-center">Supported Formats: Svg, Png, Jpg</p>
+      </div>
+    </div>
+
+    <!-- Add Blog Button -->
+    <button
+      [ngStyle]="{ 'background-color': colors.primary, 'color': colors.white }"
+      class="mt-6 w-full px-4 py-3 rounded-lg font-semibold"
+    >
+      Add Blog
+    </button>
+  </div>
+</div>

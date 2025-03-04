@@ -1,0 +1,54 @@
+<div class="p-4 lg:p-8">
+  
+    <!-- Tabs Content -->
+    <div class="mt-4">
+      <div
+        [ngStyle]="{ 'background-color': colors.background }"
+        class="border-2 rounded-lg m-4"
+      >
+        <div class="px-4 pt-6">
+          <div class="flex flex-wrap">
+            <button
+              *ngFor="let tab of tabs; let i = index"
+              (click)="selectTab(i)"
+              class="px-4 pb-2 font-semibold transition-colors duration-300 relative text-sm sm:text-base"
+              [class.text-[#16BC88]]="selectedTab === i"
+              [class.text-gray-500]="selectedTab !== i"
+              [class.border-b-2]="selectedTab === i"
+              [class.border-[#16BC88]]="selectedTab === i"
+            >
+              {{ tab }}
+            </button>
+          </div>
+          <div class="border-b-2 w-full"></div>
+        </div>
+  
+        <div class="px-4 pb-4" *ngIf="selectedTab === 0">
+          <app-slider-tab (addNewSlider)="openModal(0)"></app-slider-tab>
+        </div>
+        <div class="px-4 pb-4" *ngIf="selectedTab === 1">
+          <app-blogs-tab (addNewSlider)="openModal(1)"></app-blogs-tab>
+        </div>
+        <div class="px-4 pb-4" *ngIf="selectedTab === 2">
+          <app-about-us-tab (addNewSlider)="openModal(2)"></app-about-us-tab>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <app-slider-modal
+    *ngIf="isModalOpen && selectedModal === 0"
+    [isModalOpen]="isModalOpen"
+    (close)="closeModal()"
+  ></app-slider-modal>
+  
+  <app-blogs-modal
+    *ngIf="isModalOpen && selectedModal === 1"
+    [isModalOpen]="isModalOpen"
+    (close)="closeModal()"
+  ></app-blogs-modal>
+  <app-about-us-modal
+    *ngIf="isModalOpen && selectedModal === 2"
+    [isModalOpen]="isModalOpen"
+    (close)="closeModal()"
+  ></app-about-us-modal>

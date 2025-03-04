@@ -1,0 +1,116 @@
+<div class="p-4 lg:p-8">
+<div
+  [ngStyle]="{ 'background-color': colors.background }"
+  class="border-2 rounded-lg m-4 overflow-x-auto"
+>
+  <div
+    class="flex flex-col sm:flex-row justify-between items-center p-4 border-b"
+  >
+    <h2 class="text-lg font-bold mb-4 sm:mb-0">Applied Jobs (15)</h2>
+      <div class="relative">
+        <input
+        [ngStyle]="{ 'background-color': colors.gray100 }"
+          type="text"
+          placeholder="Search here..."
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="filterJobs()"
+          class="border p-2 pl-10 rounded-md w-full sm:w-64 focus:outline-none"
+          />
+
+        <i class="fas fa-search absolute left-3 top-3"></i>
+      </div>
+    </div>
+
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr [ngStyle]="{ color: colors.subtitle }" class="border-b text-sm"> 
+        class="border-b text-sm">
+          <th class="p-4">Name</th>
+          <th class="p-4">Location</th>
+          <th class="p-4">Job Type</th>
+          <th class="p-4">Status</th>
+          <th class="p-4">Applied Date</th>
+          <th class="p-4">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let job of filteredJobs"
+          class="border-b text-sm hover:bg-gray-50"
+        >
+          <td class="p-3 flex items-center space-x-2">
+            <img [src]="job.image" class="w-[37px] h-[38px] rounded-full" />
+            <span>{{ job.name }}</span>
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }"  
+          class="p-3">{{ job.location }}</td>
+          <td [ngStyle]="{ color: colors.subtitle }" 
+          class="p-3">{{ job.type }}</td>
+          <td class="p-3">
+            <div
+              class="flex items-center space-x-2 cursor-pointer"
+              (click)="toggleStatus(job)"
+            >
+              <div
+                class="relative w-12 h-6 flex items-center rounded-full p-1 transition-all duration-300"
+                [ngStyle]="{
+                  backgroundColor: job.isOpen ? colors.primary : colors.gray400
+                }"
+              >
+                <div
+                  class="w-5 h-5 rounded-full shadow-md transform transition-all duration-300"
+                  [ngStyle]="{
+                    transform: job.isOpen ? 'translateX(100%)' : 'translateX(0)', 'background-color': colors.white  
+                  }"
+                ></div>
+              </div>
+              <span class="" [ngStyle]="{ color: colors.subtitle }">
+                {{ job.isOpen ? 'Open' : 'Closed' }}
+              </span>
+            </div>
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }"  
+          class="p-3">{{ job.date }}</td>
+          <td class="p-3">
+            <button
+            [ngStyle]="{ 'background-color': colors.primary, 'color' : colors.white}"
+              class="px-4 py-2 rounded-md transition-colors duration-300"
+            >
+              View Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+    class="flex flex-col sm:flex-row items-center justify-end gap-2 mt-8 space-y-4 sm:space-y-0 sm:space-x-2 border-t-2 p-4"
+  >
+    <div class="flex items-center space-x-4">
+      <button class="font-bold">1</button>
+      <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+        2
+      </button>
+      <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+        3
+      </button>
+      <span [ngStyle]="{ color: colors.subtitle }" class="">.....</span>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button
+        [ngStyle]="{ color: colors.subtitle }"
+        class="flex items-center space-x-2 px-4 py-2 rounded-lg border-2 font-medium"
+      >
+        <span>←</span>
+        <span>Previous</span>
+      </button>
+      <button
+        [ngStyle]="{ color: colors.subtitle }"
+        class="flex items-center space-x-2 px-4 py-2 rounded-lg border-2 font-medium"
+      >
+        <span>Next</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+</div>
+</div>

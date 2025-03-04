@@ -1,0 +1,196 @@
+<div class="p-4 lg:p-8">
+  <div
+    [ngStyle]="{ 'background-color': colors.background }"
+    class="border-2 rounded-lg m-4 overflow-x-auto"
+  >
+    <!-- Header Section -->
+    <div
+      class="flex flex-col sm:flex-row justify-between items-center p-4 border-b"
+    >
+      <h2 class="text-lg font-bold mb-4 sm:mb-0">Testimonial Details</h2>
+      <div
+        class="relative flex flex-col sm:flex-row justify-between items-start gap-2 w-full sm:w-auto"
+      >
+        <!-- Search Input -->
+        <div class="relative w-full sm:w-64">
+          <input
+            type="text"
+            placeholder="Search here..."
+            [(ngModel)]="searchTerm"
+            (ngModelChange)="filteredTestimonial()"
+            [ngStyle]="{ 'background-color': colors.gray100 }"
+            class="border p-2 pl-10 rounded-md w-full focus:outline-none"
+          />
+          <i class="fas fa-search absolute left-3 top-3"></i>
+        </div>
+        <!-- Buttons -->
+        <div
+          class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto mt-2 sm:mt-0"
+        >
+          <button
+            (click)="openModal()"
+            class="px-4 py-2 rounded-md border-2 transition-colors duration-300 w-full sm:w-auto"
+          >
+            Add Testimonial +
+          </button>
+          <button
+            [ngStyle]="{
+              'background-color': colors.primary,
+              color: colors.white
+            }"
+            class="px-4 py-2 rounded-md transition-colors duration-300 w-full sm:w-auto"
+          >
+            Export All <i class="fas fa-paper-plane mx-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Section -->
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr [ngStyle]="{ color: colors.subtitle }" class="border-b text-sm">
+          <th class="p-4">User</th>
+          <th class="p-4">Designation</th>
+          <th class="p-4">Description</th>
+          <th class="p-4">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let Testimonial of filteredTestimonials"
+          class="border-b text-sm"
+        >
+          <td class="p-3 flex items-center space-x-2">
+            <img
+              [src]="Testimonial.image"
+              class="w-[37px] h-[38px] rounded-full"
+            />
+            <span>{{ Testimonial.name }}</span>
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ Testimonial.designation }}
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ Testimonial.description }}
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            <div class="flex space-x-4 items-center">
+              <i class="far fa-eye"></i>
+              <i class="fas fa-download"></i>
+              <i class="far fa-trash-alt"></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pagination Section -->
+    <div
+      class="flex flex-col sm:flex-row items-center justify-end gap-2 mt-8 space-y-4 sm:space-y-0 sm:space-x-2 border-t-2 p-4"
+    >
+      <div class="flex items-center space-x-4">
+        <button class="font-bold">1</button>
+        <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+          2
+        </button>
+        <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+          3
+        </button>
+        <span [ngStyle]="{ color: colors.subtitle }" class="">.....</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <button
+          [ngStyle]="{ color: colors.subtitle }"
+          class="flex items-center space-x-2 px-4 py-2 rounded-lg border-2 font-medium"
+        >
+          <span>←</span>
+          <span>Previous</span>
+        </button>
+        <button
+          [ngStyle]="{ color: colors.subtitle }"
+          class="flex items-center space-x-2 px-4 py-2 rounded-lg border-2 font-medium"
+        >
+          <span>Next</span>
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="isModalOpen"
+  [ngStyle]="{ 'background-color': colors.modalBg }"
+  class="fixed inset-0 flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10"
+  (click)="closeModal()"
+>
+  <div
+    [ngStyle]="{ 'background-color': colors.background }"
+    class="p-4 sm:p-6 md:p-8 rounded-lg shadow-lg max-w-lg w-full"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="flex justify-between items-center">
+      <h2 class="text-base sm:text-lg font-semibold">Add New Testimonial</h2>
+      <button (click)="closeModal()" class="text-lg font-bold">&times;</button>
+    </div>
+
+    <div class="mt-4 flex flex-col sm:flex-row justify-between gap-4 sm:gap-6">
+      <div class="w-full sm:w-1/2">
+        <label class="block font-medium mb-2 text-sm sm:text-base"
+          >Client Name</label
+        >
+        <input
+          type="text"
+          class="w-full p-2 sm:p-3 border rounded-lg"
+          placeholder="Amad Ali"
+        />
+      </div>
+
+      <div class="w-full sm:w-1/2">
+        <label class="block font-medium mb-2 text-sm sm:text-base"
+          >Designation</label
+        >
+        <input
+          type="text"
+          class="w-full p-2 sm:p-3 border rounded-lg"
+          placeholder="Student"
+        />
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <label class="block font-medium mb-2 text-sm sm:text-base"
+        >Upload Image</label
+      >
+      <div
+        class="border-dashed border-2 h-24 sm:h-28 p-4 sm:p-6 flex flex-col items-center justify-center rounded-lg"
+      >
+        <i class="fas fa-upload mr-2"></i>
+        <p class="font-medium text-sm sm:text-base">Upload Image</p>
+        <p 
+        [ngStyle]="{ 'color': colors.gray400 }"
+        class="text-xs sm:text-sm">
+          Supported Formats: Png, Jpg
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <label class="block font-medium mb-2 text-sm sm:text-base"
+        >Description</label
+      >
+      <textarea
+        class="w-full p-2 sm:p-3 border rounded-lg resize-none h-20 sm:h-24"
+        placeholder="Write here the Testimonial Description"
+      ></textarea>
+    </div>
+
+    <button
+      [ngStyle]="{ color: colors.white, 'background-color': colors.primary }"
+      class="mt-6 w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base"
+    >
+      Add Testimonial
+    </button>
+  </div>
+</div>

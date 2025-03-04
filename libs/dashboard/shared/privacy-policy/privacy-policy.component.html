@@ -1,0 +1,114 @@
+<div class="lg:h-[calc(100vh-95px)] h-[calc(100vh-71px)] flex flex-col">
+  <!-- Main Content -->
+  <div class="flex-grow overflow-auto p-4 sm:p-6">
+    <!-- Header Section -->
+    <div
+      class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4"
+    >
+      <h2 class="text-lg font-bold mb-2 sm:mb-0">
+        How We Use Your Information?
+      </h2>
+      <span [ngStyle]="{ color: colors.subtitle }" class="text-sm">
+        Updated at 26 August 2024, 12:45 AM
+      </span>
+    </div>
+
+    <!-- Content Section -->
+    <div [ngStyle]="{ color: colors.gray600 }" class="space-y-4">
+      <div class="flex items-start space-x-2">
+        <span class="text-lg">👉</span>
+        <p class="break-words leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. <br />
+          <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+        </p>
+      </div>
+      <div class="flex items-start space-x-2">
+        <span class="text-lg">👉</span>
+        <p class="break-words leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. <br />
+          <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+        </p>
+      </div>
+    </div>
+
+    <!-- Download Section -->
+    <div class="mt-6">
+      <h3 class="text-md font-semibold">Download Document</h3>
+      <div
+        class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-3"
+      >
+        <div
+          [ngStyle]="{ 'background-color': colors.background }"
+          class="flex items-center space-x-2 p-3 border rounded-lg"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg"
+            class="w-8 h-8"
+            alt="PDF"
+          />
+          <div>
+            <p class="text-sm font-semibold">Guide Doc.pdf</p>
+            <p [ngStyle]="{ color: colors.subtitle }" class="text-xs">29 KB</p>
+          </div>
+          <i class="fas fa-download ml-2 px-2"></i>
+        </div>
+        <div
+          [ngStyle]="{ 'background-color': colors.background }"
+          class="flex items-center space-x-2 p-3 border rounded-lg"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg"
+            class="w-8 h-8"
+            alt="PDF"
+          />
+          <div>
+            <p class="text-sm font-semibold">Guide Doc.pdf</p>
+            <p [ngStyle]="{ color: colors.subtitle }" class="text-xs">29 KB</p>
+          </div>
+          <i class="fas fa-download ml-2 px-2"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div
+      [ngStyle]="{ color: colors.gray600 }"
+      class="flex items-center justify-center"
+    >
+      <div class="mt-6 border-t-2 text-sm w-[90%]"></div>
+    </div>
+
+    <!-- Footer Link -->
+    <div [ngStyle]="{ color: colors.gray600 }" class="text-sm px-4 py-4">
+      Visit our website at
+      <a href="#" [ngStyle]="{ color: colors.text }" class="font-semibold">
+        www.pyp/support.com
+      </a>
+      for support and further information.
+    </div>
+  </div>
+
+  <!-- Fixed Footer -->
+  <nav
+    [ngStyle]="{ 'background-color': colors.background }"
+    class="h-16 border-t-2 px-4 sm:px-8 py-4 flex items-center flex-shrink-0"
+  >
+    <p [ngStyle]="{color: colors.gray500}"
+    class="text-xs sm:text-sm">
+      © 2024 Pakistan Youth Portal, Inc. All rights reserved. Unauthorized use
+      is prohibited.
+    </p>
+  </nav>
+</div>

@@ -1,0 +1,57 @@
+<div class="px-4 pb-4">
+  <!-- Header Section -->
+  <div class="px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+    <h2 class="text-lg font-bold">Slider Details</h2>
+    <div class="relative flex flex-col sm:flex-row items-center gap-4 sm:gap-8 w-full sm:w-auto">
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-64">
+        <input
+          type="text"
+          placeholder="Search here..."
+          [ngStyle]="{ 'background-color': colors.gray100 }"
+          class="border p-2 pl-10 rounded-md w-full focus:outline-none"
+        />
+        <i 
+        class="fas fa-search absolute left-3 top-3"></i>
+      </div>
+      <!-- Add Slider Button -->
+      <button
+        (click)="openModal()"
+        class="px-4 py-2 rounded-md border-2 transition-colors duration-300 w-full sm:w-auto"
+      >
+        Add Slider +
+      </button>
+    </div>
+  </div>
+
+  <!-- Grid Section -->
+  <div class="px-4 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+    <div
+      *ngFor="let slide of slides"
+      class="border shadow-sm flex flex-col space-y-2 group cursor-pointer"
+    >
+      <div class="relative">
+        <!-- Image -->
+        <img
+          [src]="slide.logo"
+          alt="Company Logo"
+          class="w-full h-48 sm:h-56 object-cover"
+        />
+        <!-- Edit and Delete Icons -->
+        <div
+          [ngStyle]="{ 'background-color': colors.background }"
+          class="absolute top-2 right-2 flex space-x-2 p-2 rounded-lg"
+        >
+          <i
+            [ngStyle]="{ color: colors.primary }"
+            class="fas fa-edit cursor-pointer"
+          ></i>
+          <i
+            [ngStyle]="{ color: colors.danger }"
+            class="fas fa-trash-alt cursor-pointer"
+          ></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

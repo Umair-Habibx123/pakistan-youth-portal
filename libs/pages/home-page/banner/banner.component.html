@@ -1,0 +1,98 @@
+<div
+  class="grid grid-cols-1 md:grid-cols-12 px-4 md:px-10 py-8 md:py-16 relative"
+  [ngStyle]="{ 'background-color': colors.background }"
+>
+  <!-- Left Content -->
+  <div class="md:col-span-6 flex flex-col justify-center p-4 relative order-2 md:order-1">
+    <!-- Additional Circle Behind the Text -->
+    <div
+      [ngStyle]="{ border: '1px solid ' + colors.primary }"
+      class="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] border left-[25%] rounded-full opacity-40 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    >
+      <div
+        [ngStyle]="{ 'background-color': colors.primary }"
+        class="absolute w-4 h-4 rounded-full"
+        style="top: 50%; right: -8px; transform: translateY(-50%)"
+      ></div>
+    </div>
+
+    <div
+      [ngStyle]="{ border: '1px solid ' + colors.primary }"
+      class="absolute w-[225px] h-[225px] md:w-[450px] md:h-[450px] border left-[25%] rounded-full opacity-40 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    ></div>
+
+    <div
+      [ngStyle]="{ border: '1px solid ' + colors.primary }"
+      class="absolute w-[150px] h-[150px] md:w-[300px] md:h-[300px] border left-[25%] rounded-full opacity-40 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    ></div>
+
+    <div
+      [ngStyle]="{ border: '1px solid ' + colors.primary }"
+      class="absolute w-[75px] h-[75px] md:w-[150px] md:h-[150px] border left-[25%] rounded-full opacity-40 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    ></div>
+
+    <h1
+      class="text-4xl md:text-7xl font-bold leading-tight"
+      [ngStyle]="{ color: colors.title }"
+    >
+      Up Your <span [ngStyle]="{ color: colors.primary }">Skills</span> To
+      <span [ngStyle]="{ color: colors.primary }">Advance</span> Your
+      <span [ngStyle]="{ color: colors.primary }">Career</span> Path
+    </h1>
+
+    <p [ngStyle]="{ color: colors.subtitle }" class="mt-4 font-medium text-sm md:text-base">
+      Expert guidance to help you navigate your career path, enhance your
+      professional profile, and achieve your career goals with confidence.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-4">
+      <button
+        [ngStyle]="{ 'background-color': colors.primary, color: colors.white }"
+        class="px-4 py-2 md:px-6 md:py-3 rounded-lg font-medium shadow-md transition"
+      >
+        Contact us
+      </button>
+
+      <button
+        [ngStyle]="{
+          'background-color': colors.buttonLightBg,
+          color: colors.primary
+        }"
+        class="px-4 py-2 md:px-6 md:py-3 rounded-lg font-medium shadow-md transition"
+      >
+        Register now
+      </button>
+    </div>
+   
+<div [ngStyle]="{ color: colors.subtitle }" class="mt-8 flex flex-wrap justify-center lg:justify-start gap-6 text-sm">
+  <div class="flex items-center gap-2">
+    <span class="text-xl">🔊</span> Public Speaking
+  </div>
+  <div class="flex items-center gap-2">
+    <span class="text-xl">🎒</span> Career-Oriented
+  </div>
+  <div class="flex items-center gap-2">
+    <span class="text-xl">💡</span> Creative Thinking
+  </div>
+</div>
+  </div>
+
+  <!-- Right Section -->
+  <div class="md:col-span-6 flex justify-center items-center relative mt-8 md:mt-0 order-1 md:order-2">
+    <div
+      class="w-[250px] h-[250px] md:w-[495px] md:h-[495px] rounded-full bg-[{{
+        colors.primary
+      }}] flex items-center justify-center relative"
+    >
+      <img
+        src="../assets/images/image.png"
+        alt="Career Growth"
+        class="w-[180px] h-[210px] md:w-[366px] md:h-[430px] object-cover rounded-full"
+      />
+    </div>
+    <div
+      [ngStyle]="{ border: '1px solid ' + colors.primary }"
+      class="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] border rounded-full opacity-20"
+    ></div>
+  </div>
+</div>
+

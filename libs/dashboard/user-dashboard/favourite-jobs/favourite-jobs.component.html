@@ -1,0 +1,167 @@
+<div class="p-4 lg:p-8">
+<div
+  [ngStyle]="{ 'background-color': colors.background }"
+  class="border-2 rounded-lg m-4 overflow-x-auto"
+>
+  <div
+    class="flex flex-col sm:flex-row justify-between items-center p-4 border-b"
+  >
+    <h2 class="text-lg font-bold mb-4 sm:mb-0">Favourite Jobs (15)</h2>
+      <div class="relative">
+        <input
+          type="text"
+          placeholder="Search here..."
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="filterJobs()"
+          [ngStyle]="{ 'Background-color': colors.gray100 }"
+          class="border p-2 pl-10 rounded-md w-full sm:w-64 focus:outline-none"
+          />
+        <i class="fas fa-search absolute left-3 top-3"></i>
+      </div>
+    </div>
+
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr [ngStyle]="{ color: colors.subtitle }" class="border-b text-sm">
+          <th class="p-4">Name</th>
+          <th class="p-4">Location</th>
+          <th class="p-4">Job Type</th>
+          <th class="p-4">Deadline</th>
+          <th class="p-4">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let job of filteredJobs"
+          class="border-b text-sm hover:bg-gray-50"
+        >
+          <td class="p-3 flex items-center space-x-2">
+            <img [src]="job.image" class="w-[37px] h-[38px] rounded-full" />
+            <span>{{ job.name }}</span>
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ job.location }}
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ job.type }}
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ getDeadlineText(job.date) }}
+          </td>
+          <td class="p-3">
+            <i class="fas fa-bookmark cursor-pointer pr-2"></i>
+            <button
+              *ngIf="!isDeadlineExpired(job.date)"
+              [ngStyle]="{
+                color: colors.white,
+                'Background-color': colors.primary
+              }"
+              class="px-4 py-2 rounded-md transition-colors duration-300"
+              (click)="openModal(job)"
+            >
+              Apply Now
+            </button>
+            <button
+              *ngIf="isDeadlineExpired(job.date)"
+              [ngStyle]="{ color: colors.white , 'Background-color': colors.gray400  }"  
+              class="px-4 py-2 rounded-md cursor-not-allowed"
+              disabled
+            >
+              Deadline Expired
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+    class="flex flex-col sm:flex-row items-center justify-end gap-2 mt-8 space-y-4 sm:space-y-0 sm:space-x-2 border-t-2 p-4"
+  >
+    <div class="flex items-center space-x-4">
+      <button class="font-bold">1</button>
+      <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+        2
+      </button>
+      <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+        3
+      </button>
+      <span [ngStyle]="{ color: colors.subtitle }" class="">.....</span>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button
+        [ngStyle]="{ color: colors.subtitle }"
+        class="flex items-center space-x-2 px-4 py-2 rounded-lg border-2 font-medium"
+      >
+        <span>←</span>
+        <span>Previous</span>
+      </button>
+      <button
+        [ngStyle]="{ color: colors.subtitle }"
+        class="flex items-center space-x-2 px-4 py-2 rounded-lg border-2 font-medium"
+      >
+        <span>Next</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div
+  *ngIf="isModalOpen"
+  [ngStyle]="{ 'Background-color': colors.modalBg }"  
+  class="fixed inset-0 w-full h-full flex items-center justify-center px-4"
+  (click)="closeModal()"
+>
+  <div
+    [ngStyle]="{ 'Background-color': colors.background }"
+    class="p-6 rounded-lg shadow-lg max-w-xl w-full"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg font-semibold">Job Details</h2>
+      <button
+        (click)="closeModal()"
+        [ngStyle]="{ color: colors.subtitle }"
+        class="text-lg font-bold"
+      >
+        ×
+      </button>
+    </div>
+
+    <div [ngStyle]="{ 'Background-color': colors.successStoryBg }"   
+    class="p-4 rounded-lg mt-4 flex flex-col items-center">
+      <img [src]="selectedJob?.image" alt="Company Logo" class="h-12 mb-2" />
+
+      <h3 class="text-xl font-semibold">
+        {{ selectedJob?.title }}
+      </h3>
+      <p [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+        {{ selectedJob?.type }}
+      </p>
+      <p [ngStyle]="{ color: colors.subtitle }" class="">
+        {{ selectedJob?.location }}
+      </p>
+    </div>
+
+    <div class="mt-6">
+      <h3 class="text-lg font-semibold">Description :</h3>
+      <p [ngStyle]="{ color: colors.subtitle }" class="text-sm mt-2">
+        {{ selectedJob?.description }}
+      </p>
+    </div>
+
+    <div class="mt-4">
+      <h3 class="text-lg font-semibold text-gray-900">Requirements :</h3>
+      <p [ngStyle]="{ color: colors.subtitle }" class="text-sm mt-2">
+        {{ selectedJob?.requirements }}
+      </p>
+    </div>
+    <button
+      class="mt-6 w-full bg-[{{
+        colors.primary
+      }}] text-white px-4 py-3 rounded text-center font-semibold"
+    >
+      Apply for this Job
+    </button>
+  </div>
+</div>

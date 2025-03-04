@@ -1,0 +1,96 @@
+<div class="flex flex-col items-center py-8 sm:py-12 md:py-16">
+  <div class="flex flex-col items-center">
+    <img src="../../../assets/images/logo.png" class="h-10 w-28 sm:h-12 sm:w-36" />
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold py-4 sm:py-6 md:py-8">
+      Register yourself to apply this job
+    </h2>
+  </div>
+
+  <div
+    class="flex flex-col items-center border-2 rounded-2xl w-full sm:w-[90%] md:w-[85%] px-2 sm:px-4 py-2 shadow-sm"
+  >
+    <a
+      [routerLink]="'/'"
+      class="flex rounded-2xl w-full px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 cursor-pointer"
+    >
+      <i class="fas fa-arrow-left text-base sm:text-lg"></i>
+      <p class="ml-2 font-medium text-sm sm:text-base">Back</p>
+    </a>
+
+    <!-- Registration Form Container -->
+    <div class="flex flex-col items-center w-full px-2 sm:px-4 py-2">
+      <!-- Step Indicators -->
+      <div class="flex justify-center items-center w-full sm:w-[90%] md:w-[85%] pb-2 sm:pb-4 space-x-2 sm:space-x-4 md:space-x-6">
+        <div class="flex items-center space-x-1 sm:space-x-2 cursor-pointer text-sm sm:text-base md:text-xl">
+          <span
+            [ngStyle]="{ color: colors.white }"
+            class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full font-semibold"
+            [style.backgroundColor]="
+              currentStep >= 1 ? colors.primary : colors.gray400
+            "
+          >
+            1
+          </span>
+          <span
+            [style.color]="currentStep >= 1 ? colors.primary : colors.gray400"
+            class="font-semibold text-sm sm:text-base md:text-xl"
+          >
+            Personal Information
+          </span>
+        </div>
+
+        <div class="flex items-center space-x-1 sm:space-x-2 cursor-pointer text-sm sm:text-base md:text-xl">
+          <span
+            [ngStyle]="{ color: colors.white }"
+            class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full font-semibold"
+            [style.backgroundColor]="
+              currentStep >= 2 ? colors.primary : colors.gray400
+            "
+          >
+            2
+          </span>
+          <span
+            [style.color]="currentStep >= 2 ? colors.primary : colors.gray400"
+            class="font-semibold text-sm sm:text-base md:text-xl"
+          >
+            Educational Information
+          </span>
+        </div>
+
+        <div class="flex items-center space-x-1 sm:space-x-2 cursor-pointer text-sm sm:text-base md:text-xl">
+          <span
+            [ngStyle]="{ color: colors.white }"
+            class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full font-semibold"
+            [style.backgroundColor]="
+              currentStep >= 3 ? colors.primary : colors.gray400
+            "
+          >
+            3
+          </span>
+          <span
+            [style.color]="currentStep >= 3 ? colors.primary : colors.gray400"
+            class="font-semibold text-sm sm:text-base md:text-xl"
+          >
+            Interest Form
+          </span>
+        </div>
+      </div>
+
+      <!-- Dynamic Form Loading -->
+      <div class="flex flex-col w-full sm:w-[90%] md:w-[85%] pb-4 sm:pb-6 md:pb-8">
+        <app-form1
+          *ngIf="currentStep === 1"
+          (nextStep)="nextStep()"
+        ></app-form1>
+        <app-form2
+          *ngIf="currentStep === 2"
+          (nextStep)="nextStep()"
+        ></app-form2>
+        <app-form3
+          *ngIf="currentStep === 3"
+          (nextStep)="nextStep()"
+        ></app-form3>
+      </div>
+    </div>
+  </div>
+</div>

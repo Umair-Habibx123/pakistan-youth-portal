@@ -1,0 +1,52 @@
+<div
+  *ngIf="isModalOpen"
+  [ngStyle]="{ 'background-color': colors.modalBg }"
+  class="fixed inset-0 flex items-center justify-center p-4"
+  (click)="closeModal()"
+>
+  <div
+    [ngStyle]="{ 'background-color': colors.background }"
+    class="p-6 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg font-semibold">Add New About</h2>
+      <button (click)="closeModal()" class="text-lg font-bold">×</button>
+    </div>
+
+    <div class="mt-4">
+      <label class="block font-medium mb-2">Heading</label>
+      <input
+        type="text"
+        class="w-full p-3 border rounded-lg"
+        placeholder="Enter blog heading"
+      />
+    </div>
+
+    <div class="mt-4">
+      <label class="block font-medium mb-2">About Description</label>
+      <textarea
+        class="w-full p-3 border rounded-lg resize-none h-24"
+        placeholder="Write here the address of marketplace"
+      ></textarea>
+    </div>
+
+    <div class="mt-4">
+      <label class="block font-medium mb-2">About Image</label>
+      <div
+        class="border-dashed border-2 h-28 p-6 flex flex-col items-center justify-center rounded-lg"
+      >
+        <i class="fas fa-upload mr-2"></i>
+        <p class="font-medium">Upload Image</p>
+        <p class="text-sm">Supported Formats: Svg, Png, Jpg</p>
+      </div>
+    </div>
+
+    <button
+      [ngStyle]="{ color: colors.white, 'background-color': colors.primary }"
+      class="mt-6 w-full px-4 py-3 rounded-lg font-semibold"
+    >
+      Add About
+    </button>
+  </div>
+</div>

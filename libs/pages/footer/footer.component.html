@@ -1,0 +1,49 @@
+
+    <footer [ngStyle]="{ color: colors.white, 'background-color': colors.footerBg }" class="py-12">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
+        <div>
+          <img src="../../../assets/images/logo.png" alt="Pakistan Youth Portal Logo" class="mb-4 mx-auto md:mx-0" />
+          <p [ngStyle]="{ color: colors.white }" class="text-sm font-medium leading-relaxed">
+            Expert guidance to help you navigate your career path, enhance your <br /><br />
+            professional profile, and achieve your career goals with confidence.
+          </p>
+        </div>
+
+        <div>
+          <h3 [ngStyle]="{ color: colors.gray400 }" class="text-lg font-semibold mb-3">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="">About us</a></li>
+            <li><a href="#" class="">Contact us</a></li>
+            <li><a href="#" class="">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 [ngStyle]="{ color: colors.gray400 }" class="text-lg font-semibold mb-3">Legal</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="">Terms</a></li>
+            <li><a href="#" class="">Privacy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 [ngStyle]="{ color: colors.gray400 }" class="text-lg font-semibold mb-3">Location</h3>
+          <div class="flex justify-center md:justify-start">
+            <iframe width="100%" height="200" style="border: 0" loading="lazy" allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=API_KEY&q=Space+Needle,Seattle+WA">
+            </iframe>
+          </div>
+          <div class="flex justify-center md:justify-start space-x-4 mt-4">
+            <a href="#" [ngStyle]="{ color: colors.gray400 }" class="text-xl "><i class="fab fa-twitter"></i></a>
+            <a href="#" [ngStyle]="{ color: colors.gray400 }" class="text-xl "><i class="fab fa-linkedin"></i></a>
+            <a href="#" [ngStyle]="{ color: colors.gray400 }" class="text-xl "><i class="fab fa-github"></i></a>
+            <a href="#" [ngStyle]="{ color: colors.gray400 }" class="text-xl "><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="max-w-7xl mx-auto px-6 mt-8 flex flex-col sm:flex-row items-center justify-between text-center">
+        <p [ngStyle]="{ color: colors.gray400 }" class="text-sm">© 2024 Pakistan Youth Portal. All rights reserved.</p>
+      </div>
+    </footer>

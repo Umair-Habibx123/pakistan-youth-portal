@@ -1,0 +1,84 @@
+<div
+  class="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[625px] bg-cover bg-center"
+  style="background-image: url('../../../assets/images/Container2.png')"
+>
+  <!-- Background Overlay -->
+  <div class="absolute inset-0 bg-opacity-65"></div>
+
+  <!-- Content Wrapper -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8">
+    <div
+      [ngStyle]="{ color: colors.white }"
+      class="text-center py-4 sm:py-6 px-4 sm:px-6 md:px-8 rounded-xl w-11/12 sm:w-4/5 bg-white/10 backdrop-blur-md shadow-lg"
+    >
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[{{ colors.background }}]"
+      >
+        Up Your <span class="text-[{{ colors.primary }}]">Skills</span><br />
+        To <span class="text-[{{ colors.primary }}]">Advance</span> Your
+        <span class="text-[{{ colors.primary }}]">Career</span> Path
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="mx-4 sm:mx-12 md:mx-24 lg:mx-48 my-10 sm:my-16 md:my-20">
+  <div class="flex flex-col space-y-6 sm:space-y-8">
+    <div *ngFor="let blog of blogs" class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+      <img
+        [src]="blog.logo"
+        alt="Blog Image"
+        class="w-full sm:w-48 h-40 sm:h-full object-cover rounded-lg"
+      />
+      <div class="flex flex-col flex-grow">
+        <p class="text-[{{ colors.primary }}] font-semibold text-xs sm:text-sm">
+          {{ blog.date | date : "MMMM d, yyyy" }}
+        </p>
+        <h3 class="text-base sm:text-lg font-semibold mt-1">
+          {{ blog.title }}
+        </h3>
+        <p
+          [ngStyle]="{ color: colors.subtitle }"
+          class="text-xs sm:text-sm mt-1 flex-grow"
+        >
+          {{ blog.description | slice : 0 : 100 }}...
+        </p>
+        <div class="mt-2 space-x-2">
+          <span
+            *ngFor="let tag of blog.tags"
+            class="text-xs font-medium px-2 py-1 rounded"
+            [ngClass]="[tagColors[tag]?.text, tagColors[tag]?.bg]"
+          >
+            {{ tag }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="flex flex-col sm:flex-row items-center justify-end gap-2 mt-8 border-t-2 pt-2 space-y-4 sm:space-y-0">
+    <div class="flex items-center space-x-2">
+      <button class="font-bold">1</button>
+      <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">2</button>
+      <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">3</button>
+      <span [ngStyle]="{ color: colors.subtitle }">.....</span>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button
+        [ngStyle]="{ color: colors.subtitle }"
+        class="flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-2 rounded-lg border-2 font-medium"
+      >
+        <span>←</span>
+        <span>Previous</span>
+      </button>
+      <button
+        [ngStyle]="{ color: colors.subtitle }"
+        class="flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-2 rounded-lg border-2 font-medium"
+      >
+        <span>Next</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,128 @@
+
+<div class="grid grid-cols-12 rounded-lg min-h-screen">
+  <!-- Left Section: Login Form -->
+  <div
+    class="col-span-12 md:col-span-6 flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-28 "
+  >
+    <img
+      src="../../../assets/images/logo.png"
+      alt="Logo"
+      class="h-16 w-44 mb-6"
+    />
+    <h2 class="text-4xl font-semibold mb-4">Enter Code</h2>
+
+    <h2 class="text-sm mb-4 mt-12">Check Your Email and Enter Code</h2>
+
+    <div class="flex space-x-2 mb-4">
+      <input
+        id="input1"
+        type="text"
+        maxlength="1"
+        class="w-12 h-12 text-center border p-3 rounded-md"
+        placeholder="●"
+        (input)="moveToNext($event, 'input2')"
+      />
+      <input
+        id="input2"
+        type="text"
+        maxlength="1"
+        class="w-12 h-12 text-center border p-3 rounded-md"
+        placeholder="●"
+        (input)="moveToNext($event, 'input3')"
+      />
+      <input
+        id="input3"
+        type="text"
+        maxlength="1"
+        class="w-12 h-12 text-center border p-3 rounded-md"
+        placeholder="●"
+        (input)="moveToNext($event, 'input4')"
+      />
+      <input
+        id="input4"
+        type="text"
+        maxlength="1"
+        class="w-12 h-12 text-center border p-3 rounded-md"
+        placeholder="●"
+        (input)="moveToNext($event, '')"
+      />
+    </div>
+
+    <p [ngStyle]="{ color: colors.gray400 }" class="mb-12">
+      Enter Code to Continue or continue
+    </p>
+
+    <button [ngStyle]="{ 'Background-color': colors.primary , color : colors.white}"
+    class="w-full py-3 my-6 rounded-md mb-4">
+      Continue to login
+    </button>
+  </div>
+
+  <!-- Right Section: Background with Grid -->
+
+  <div
+  [ngStyle]="{ 'Background-color': colors.gray100}"
+    class="col-span-12 md:col-span-6 lg:col-span-6 lg:flex lg:flex-col hidden md:flex md:flex-col px-4 sm:px-8 py-8 sm:py-12 relative h-screen overflow-hidden"
+  >
+    <h1
+      class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight relative z-20 pb-4 sm:pb-8"
+    >
+      Manage youth! <br />
+      <span class="text-[{{ colors.primary }}]">
+        With Pakistan youth portal
+      </span>
+    </h1>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-8 h-full relative z-0"
+    >
+      <div class="flex flex-col space-y-2 sm:space-y-4 h-full -mt-4 sm:-mt-10">
+        <img
+          src="../../../assets/images/p1.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+        <div
+          class="text-center rounded-3xl bg-primary bg-opacity-10 w-full h-24 sm:h-32 flex items-center justify-center flex-1"
+        >
+          <h1 class="text-primary text-xl sm:text-2xl font-bold">Manage</h1>
+        </div>
+        <img
+          src="../../../assets/images/p2.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+      </div>
+
+      <div class="flex flex-col space-y-2 sm:space-y-4 h-full mt-4 sm:mt-10">
+        <img
+          src="../../../assets/images/p3.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+        <img
+          src="../../../assets/images/p4.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+        <div
+          class="text-center rounded-3xl bg-opacity-10 h-24 sm:h-32 w-full flex items-center justify-center flex-1"
+        >
+          <h1 class="text-xl sm:text-2xl font-bold">Grow</h1>
+        </div>
+      </div>
+
+      <div class="flex flex-col space-y-2 sm:space-y-4 h-full">
+        <div
+          class="text-center rounded-3xl bg-primary h-24 sm:h-32 bg-opacity-10 w-full flex items-center justify-center flex-1"
+        >
+          <h1 class="text-xl sm:text-2xl font-bold">Business</h1>
+        </div>
+        <img
+          src="../../../assets/images/p5.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+        <img
+          src="../../../assets/images/person5.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+      </div>
+    </div>
+  </div>
+</div>

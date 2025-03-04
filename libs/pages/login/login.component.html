@@ -1,0 +1,162 @@
+<div class="grid grid-cols-12 rounded-lg min-h-screen">
+  <!-- Left Section: Login Form -->
+  <div
+  class="col-span-12 md:col-span-6 flex flex-col px-4 sm:px-8 md:px-12 lg:px-28 justify-center h-screen"
+>
+    <img
+      src="../../../assets/images/logo.png"
+      alt="Logo"
+      class="h-12 sm:h-16 w-32 sm:w-44 mb-4 sm:mb-6"
+    />
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4">Log in</h2>
+
+    <div
+      class="flex space-x-2 bg-[#F3F4F6] rounded-lg w-full sm:w-64 p-1 my-4 items-center justify-center"
+    >
+      <button
+        #userLogin
+        id="userLogin"
+        class="px-4 py-1 bg-[#F9F9F9] rounded-md text-sm sm:text-base"
+        (click)="onUserLoginClick()"
+      >
+        User Login
+      </button>
+      <button
+        #adminLogin
+        id="adminLogin"
+        class="px-4 py-1 bg-[#F9F9F9] rounded-md text-sm sm:text-base"
+        (click)="onAdminLoginClick()"
+      >
+        Admin Login
+      </button>
+    </div>
+
+    <h2 class="text-sm mb-2">Email</h2>
+    <input
+      type="email"
+      placeholder="admin@pakistanyouthportal.com"
+      class="w-full border p-2 sm:p-3 rounded-md mb-4 text-sm sm:text-base"
+    />
+
+    <div class="relative w-full mb-4">
+      <h2 class="text-sm mb-2">Enter your Password</h2>
+      <input
+        type="password"
+        placeholder="••••••••••"
+        class="w-full border p-2 sm:p-3 rounded-md text-sm sm:text-base"
+      />
+    </div>
+
+    <a
+      routerLink="/forgot"
+      routerLinkActive="active-link"
+      href="#"
+      class="text-[{{ colors.primary }}] mb-4 text-sm sm:text-base"
+      >Forgot password?</a
+    >
+
+    <button
+      class="w-full py-2 bg-[{{
+        colors.primary
+      }}] text-white rounded-md mb-2 text-sm sm:text-base"
+    >
+      Login
+    </button>
+
+    <div class="flex items-center justify-center my-4">
+      <div class="flex-grow border-t-2"></div>
+      <span class="mx-4 text-sm sm:text-base">OR</span>
+      <div class="flex-grow border-t-2"></div>
+    </div>
+
+    <button
+    [ngStyle]="{ 'Background-color': colors.gray100}"
+      class="w-full py-2 sm:py-3 border flex items-center justify-center space-x-2 rounded-lg mb-3 text-sm sm:text-base"
+    >
+      <i class="fab fa-apple"></i>
+      <span>Continue with Apple</span>
+    </button>
+    <button
+    [ngStyle]="{ 'Background-color': colors.gray100}"
+      class="w-full py-2 sm:py-3 border flex items-center justify-center space-x-2 rounded-lg text-sm sm:text-base"
+    >
+      <i class="fab fa-google"></i>
+      <span>Continue with Google</span>
+    </button>
+
+    <p  [ngStyle]="{ color : colors.gray400}"
+    class="py-4 sm:py-8 text-xs sm:text-sm">
+      By clicking on the "Login" button, I consent to the processing of my
+      personal data in accordance with
+      <span class="underline text-primary">Privacy Policy</span>
+    </p>
+  </div>
+
+  <!-- Right Section: Background with Grid -->
+
+  <div
+  [ngStyle]="{ 'Background-color': colors.gray100}"
+  class="col-span-12 md:col-span-6 lg:col-span-6 lg:flex lg:flex-col hidden md:flex md:flex-col px-4 sm:px-8 py-8 sm:py-12 relative h-screen overflow-hidden"
+>
+    <h1
+      class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight relative z-20 pb-4 sm:pb-8"
+    >
+      Manage youth! <br />
+      <span class="text-[{{ colors.primary }}]">
+        With Pakistan youth portal
+      </span>
+    </h1>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-8 h-full relative z-0"
+    >
+      <div class="flex flex-col space-y-2 sm:space-y-4 h-full -mt-4 sm:-mt-10">
+        <img
+          src="../../../assets/images/p1.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+        <div
+          class="text-center rounded-3xl bg-primary bg-opacity-10 w-full h-24 sm:h-32 flex items-center justify-center flex-1"
+        >
+          <h1 class="text-primary text-xl sm:text-2xl font-bold">Manage</h1>
+        </div>
+        <img
+          src="../../../assets/images/p2.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+      </div>
+
+      <div class="flex flex-col space-y-2 sm:space-y-4 h-full mt-4 sm:mt-10">
+        <img
+          src="../../../assets/images/p3.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+        <img
+          src="../../../assets/images/p4.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+        <div
+          class="text-center rounded-3xl bg-opacity-10 h-24 sm:h-32 w-full flex items-center justify-center flex-1"
+        >
+          <h1 class="text-xl sm:text-2xl font-bold">Grow</h1>
+        </div>
+      </div>
+
+      <div class="flex flex-col space-y-2 sm:space-y-4 h-full">
+        <div
+          class="text-center rounded-3xl bg-primary h-24 sm:h-32 bg-opacity-10 w-full flex items-center justify-center flex-1"
+        >
+          <h1 class="text-xl sm:text-2xl font-bold">Business</h1>
+        </div>
+        <img
+          src="../../../assets/images/p5.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+        <img
+          src="../../../assets/images/person5.png"
+          class="rounded-3xl h-24 sm:h-32 w-full object-cover flex-1"
+        />
+      </div>
+    </div>
+  </div>
+</div>

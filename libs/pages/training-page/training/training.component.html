@@ -1,0 +1,175 @@
+<div
+  class="relative w-full h-[625px] bg-cover bg-center"
+  style="background-image: url('../../../assets/images/Container1.png')"
+>
+  <!-- Background Overlay -->
+  <div class="absolute inset-0 bg-opacity-65"></div>
+
+  <!-- Content Wrapper -->
+  <div
+    class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6"
+  >
+    <div
+    [ngStyle]="{ color: colors.white }"
+      class="text-center py-4 sm:py-6 px-4 sm:px-8 rounded-xl w-full sm:w-4/5 bg-white/10 backdrop-blur-md shadow-lg"
+    >
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+      >
+        Up Your <span class="text-[{{ colors.primary }}]">Skills</span><br />
+        To <span class="text-[{{ colors.primary }}]">Advance</span> Your
+        <span class="text-[{{ colors.primary }}]">Career</span> Path
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+  <!-- Heading Section -->
+  <div class="flex justify-center">
+    <div class="text-center mb-6 sm:mb-8 w-full max-w-4xl">
+      <h3 class="text-[{{ colors.primary }}] font-semibold text-sm m-2 sm:m-4">
+        Tranings
+      </h3>
+      <h2 class="text-xl sm:text-2xl font-bold m-2 sm:m-4">
+        PYP Trainings are complimentary virtual <br class="hidden sm:block" />
+        experiences, available live or on demand.
+      </h2>
+    </div>
+  </div>
+
+  <!-- Training Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div
+      *ngFor="let tranings of traning"
+      class="border shadow-sm rounded-lg p-4 sm:p-5 flex flex-col space-y-2 hover:bg-[{{
+        colors.primary
+      }}] group cursor-pointer"
+      (click)="openModal(tranings)"
+    >
+      <!-- Image Section -->
+      <div class="relative">
+        <img
+          [src]="tranings.logo"
+          alt="Company Logo"
+          class="w-full h-48 sm:h-56 object-cover"
+        />
+      </div>
+
+      <!-- Text Content -->
+      <div class="p-4 sm:p-5">
+        <p
+          class="text-[{{
+            colors.primary
+          }}] font-semibold text-sm group-hover:text-white"
+        >
+          {{ tranings.category }}
+        </p>
+
+        <h3
+          class="text-lg sm:text-xl font-bold leading-tight mt-1 group-hover:text-white"
+        >
+          {{ tranings.title }}
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div
+    class="flex flex-col sm:flex-row items-center justify-between sm:justify-end mt-6 sm:mt-8 space-y-4 sm:space-y-0 sm:space-x-2 border-t-2 pt-4 sm:pt-2"
+  >
+    <div class="flex items-center space-x-4">
+      <button class="font-bold">1</button>
+      <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+        2
+      </button>
+      <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+        3
+      </button>
+      <span [ngStyle]="{ color: colors.subtitle }" class="">.....</span>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button
+        [ngStyle]="{ color: colors.subtitle }"
+        class="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg border-2 font-medium"
+      >
+        <span>←</span>
+        <span>Previous</span>
+      </button>
+      <button
+        [ngStyle]="{ color: colors.subtitle }"
+        class="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg border-2 font-medium"
+      >
+        <span>Next</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  *ngIf="isModalOpen"
+  [ngStyle]="{ 'background-color': colors.modalBg }"
+  class="fixed inset-0 w-full h-full flex items-center justify-center px-4"
+  (click)="closeModal()"
+>
+  <div
+    [ngStyle]="{ 'background-color': colors.white }"
+    class="p-4 sm:p-6 rounded-lg shadow-lg max-w-xl w-full mx-4"
+    (click)="$event.stopPropagation()"
+  >
+    <!-- Modal Header -->
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg sm:text-xl font-semibold">Training Details</h2>
+      <button
+        (click)="closeModal()"
+        [ngStyle]="{ color: colors.subtitle }"
+        class="text-lg sm:text-xl font-bold"
+      >
+        ×
+      </button>
+    </div>
+
+    <!-- Image Section -->
+    <div class="relative mt-4">
+      <img
+        [src]="selectedTraning?.logo"
+        alt="Training Image"
+        class="w-full h-40 sm:h-56 object-cover rounded-lg"
+      />
+      <div
+        class="absolute top-2 right-2 px-3 py-1 rounded-xl shadow-md flex items-center space-x-1"
+      >
+        <span [ngStyle]="{ color: colors.subtitle }" class="text-sm"
+          >⏰ 08 hr 12 mins</span
+        >
+      </div>
+    </div>
+
+    <!-- Training Details -->
+    <div [ngStyle]="{ color: colors.subtitle }" class="mt-4">
+      <h3 class="text-lg sm:text-xl font-bold">
+        {{ selectedTraning?.title }}
+      </h3>
+      <p class="font-semibold text-sm mt-1">
+        {{ selectedTraning?.category }}
+      </p>
+
+      <p 
+      class="mt-2 text-sm leading-relaxed">
+        {{ selectedTraning?.description }}
+      </p>
+    </div>
+
+    <!-- Register Button -->
+    <button
+      class="mt-6 w-full bg-[{{
+        colors.primary
+      }}] text-white px-4 py-2 sm:py-3 rounded text-center font-semibold text-sm sm:text-base"
+    >
+      Register Now
+    </button>
+  </div>
+</div>

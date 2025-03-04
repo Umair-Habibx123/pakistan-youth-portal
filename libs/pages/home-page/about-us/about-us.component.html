@@ -1,0 +1,44 @@
+<div
+  class="grid grid-cols-1 lg:grid-cols-12 px-6 md:px-16 md:py-20 text-center py-8 mx-4 sm:mx-10 md:mx-20"
+>
+  <!-- Left Section -->
+  <!-- order-1 md:order-1 swaping -->
+  <div
+    class="lg:col-span-6 flex flex-col justify-center p-4 md:p-6 text-center lg:text-left"
+  >
+    <p class="text-[{{ colors.primary }}] font-semibold">About us</p>
+    <h2
+      class="text-2xl md:text-3xl lg:text-4xl font-bold text-[{{
+        colors.title
+      }}] leading-snug mt-2"
+    >
+      Lorem Ipsum Dolor Sit Amet Consectetur. Blandit Arcu Nisl Tellus Auctor
+      Fermentum Velit.
+    </h2>
+    <p [ngStyle]="{ color: colors.subtitle }" class="mt-4 leading-relaxed">
+      Weekend UX is a UI/UX Design Academy in Delhi involved in User Experience
+      and User Interface Training and Consulting. It was started in 2023 and is
+      passionate about User Interface Design, User Experience Design, and Human
+      Computer Interaction Design. Humanoid is gushing towards competence to
+      acquire knowledge and have a wide understanding of the sphere through the
+      foremost courses in the area of UI/UX Design, by strengthening up your
+      skills, for your golden future.
+    </p>
+  </div>
+
+  <!-- Right Section -->
+  <div class="lg:col-span-6 lg:flex hidden justify-center mt-8 lg:mt-0">
+    <div class="relative w-64 md:w-80">
+      <div
+        class="absolute top-4 -right-10 md:-right-16 lg:-right-36 w-72 md:w-96 h-72 md:h-96 bg-[{{
+          colors.primary
+        }}] rounded-lg"
+      ></div>
+      <img
+        src="../assets/images/29b3389cab60950a6b10d03a6e129d6e.png"
+        alt="Team Work"
+        class="relative w-full top-12 md:top-16 rounded-lg shadow-lg h-60 md:h-72 object-cover"
+      />
+    </div>
+  </div>
+</div>

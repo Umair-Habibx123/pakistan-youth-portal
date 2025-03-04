@@ -1,0 +1,30 @@
+<section class="text-center py-20 px-6 sm:px-10 md:px-16 lg:mx-20">
+  <p class="text-[{{ colors.primary }}] font-medium uppercase">FAQ'S</p>
+  <h2 class="text-2xl sm:text-3xl font-bold mt-2">
+    Frequently Asked Questions
+  </h2>
+  <p [ngStyle]="{ color: colors.subtitle }" class="mt-4 text-sm sm:text-base">
+    Find answers to commonly asked questions about Youth Portal, covering
+    features, pricing, integrations, and more.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+    <div *ngFor="let faq of faqs; let i = index" class="space-y-4">
+      <div
+        [ngStyle]="{ 'background-color': colors.gray100 }"
+        class="faq-item p-4 rounded-xl shadow-sm flex justify-between items-center cursor-pointer"
+      >
+        <p
+          [ngStyle]="{ color: colors.subtitle }"
+          class="font-medium text-sm sm:text-base"
+        >
+          {{ faq.description }}
+          <!-- Access description field -->
+        </p>
+        <span class="text-[{{ colors.primary }}] text-lg sm:text-xl font-bold"
+          >+</span
+        >
+      </div>
+    </div>
+  </div>
+</section>

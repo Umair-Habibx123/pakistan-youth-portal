@@ -1,0 +1,160 @@
+<div class="flex w-full justify-between items-center pb-4 border-b-2 mt-2 mb-4">
+  <h3 class="text-lg md:text-xl font-semibold">Educational Details</h3>
+  <button
+    class="bg-[{{ colors.primary }}] text-white px-3 py-1 md:px-4 md:py-2 rounded-md font-semibold text-sm md:text-base"
+    (click)="goToNext()"
+  >
+    Save & Next
+  </button>
+</div>
+
+<!-- Educational Information Form -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 ml-0">
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">University</label>
+    <select class="border-2 py-2 px-4 rounded-md w-full">
+      <option>Select University</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Degree</label>
+    <select class="border-2 py-2 px-4 rounded-md w-full">
+      <option>Select Degree</option>
+    </select>
+  </div>
+</div>
+
+<div class="flex w-full justify-between items-center pb-4 border-b-2 mt-2 mb-8">
+  <h3 class="text-lg md:text-xl font-semibold">Certification</h3>
+  <button
+    class="text-[{{ colors.primary }}] border border-[{{ colors.primary }}] px-3 py-1 md:px-4 md:py-2 rounded-md font-semibold text-sm md:text-base"
+  >
+    Add
+  </button>
+</div>
+
+<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Course Name</label>
+    <select class="border-2 py-2 px-4 rounded-md w-full">
+      <option>Select Course</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Institute Name</label>
+    <input
+      type="text"
+      placeholder="Enter City"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Duration</label>
+    <input
+      type="text"
+      placeholder="Enter Duration"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+</div>
+
+<div class="flex w-full justify-between items-center pb-4 border-b-2 mt-2 mb-4">
+  <h3 class="text-lg md:text-xl font-semibold">Experience</h3>
+  <button
+    class="text-[{{ colors.primary }}] border border-[{{ colors.primary }}] px-3 py-1 md:px-4 md:py-2 rounded-md font-semibold text-sm md:text-base"
+  >
+    Add
+  </button>
+</div>
+
+<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Field</label>
+    <select class="border-2 py-2 px-4 rounded-md w-full">
+      <option>Select Field</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Organization Name</label>
+    <input
+      type="text"
+      placeholder="Enter Organization Name"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+</div>
+
+<div class="flex w-full justify-between items-center pb-4 border-b-2 mt-2 mb-4">
+  <h3 class="text-lg md:text-xl font-semibold">Upload Documents</h3>
+  <button
+    class="text-[{{ colors.primary }}] border border-[{{ colors.primary }}] px-3 py-1 md:px-4 md:py-2 rounded-md font-semibold text-sm md:text-base"
+  >
+    Add
+  </button>
+</div>
+
+<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">MarkSheets</label>
+    <div
+      class="border-2 border-dashed p-4 rounded-md flex flex-col items-center justify-center h-32"
+    >
+      <div class="grid grid-cols-1 gap-2 w-full text-center text-sm">
+        <span class=""
+          >Drag & drop files or
+          <span class="font-bold cursor-pointer underline">Browse</span></span
+        >
+        <span class="">Supported formats: JPEG, PNG</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Degree Transcript</label>
+    <div
+      class="border-2 border-dashed p-4 rounded-md flex flex-col items-center justify-center h-32"
+    >
+      <div class="grid grid-cols-1 gap-2 w-full text-center text-sm">
+        <span class=""
+          >Drag & drop files or
+          <span class="font-bold cursor-pointer underline">Browse</span></span
+        >
+        <span class="">Supported formats: JPEG, PNG</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">CV</label>
+    <div
+      class="border-2 border-dashed p-4 rounded-md flex flex-col items-center justify-center h-32"
+    >
+      <div class="grid grid-cols-1 gap-2 w-full text-center text-sm">
+        <span class=""
+          >Drag & drop files or
+          <span class="font-bold cursor-pointer underline">Browse</span></span
+        >
+        <span class="">Supported formats: JPEG, PNG</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Other Documents</label>
+    <div
+      class="border-2 border-dashed p-4 rounded-md flex flex-col items-center justify-center h-32"
+    >
+      <div class="grid grid-cols-1 gap-2 w-full text-center text-sm">
+        <span class=""
+          >Drag & drop files or
+          <span class="font-bold cursor-pointer underline">Browse</span></span
+        >
+        <span class="">Supported formats: JPEG, PNG</span>
+      </div>
+    </div>
+  </div>
+</div>

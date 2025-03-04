@@ -1,0 +1,98 @@
+<div class="p-4 lg:p-8">
+  <div
+    [ngStyle]="{ 'background-color': colors.background }"
+    class="border-2 rounded-lg m-4 overflow-x-auto"
+  >
+    <div
+      class="flex flex-col sm:flex-row justify-between items-center p-4 border-b"
+    >
+      <h2 class="text-lg font-bold mb-4 sm:mb-0">Recent Registrations</h2>
+      <div class="relative">
+        <button
+          [ngStyle]="{
+            'background-color': colors.primary,
+            color: colors.white
+          }"
+          class="px-4 py-2 rounded-md transition-colors duration-300"
+        >
+          Export All
+          <i class="fas fa-paper-plane mx-2"></i>
+        </button>
+      </div>
+    </div>
+
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr [ngStyle]="{ color: colors.subtitle }" class="border-b text-sm">
+          <th class="p-4">Name</th>
+          <th class="p-4">Email</th>
+          <th class="p-4">Contact</th>
+          <th class="p-4">Cities</th>
+          <th class="p-4">Category</th>
+          <th class="p-4">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let users of users"
+          class="border-b text-sm hover:bg-gray-50"
+        >
+          <td class="p-3 flex items-center space-x-2">
+            <img [src]="users.image" class="w-[37px] h-[38px] rounded-full" />
+            <span>{{ users.name }}</span>
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ users.email }}
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ users.contact }}
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ users.cities }}
+          </td>
+          <td [ngStyle]="{ color: colors.subtitle }" class="p-3">
+            {{ users.category }}
+          </td>
+          <td class="p-3">
+            <div class="flex space-x-4 items-center">
+              <i class="far fa-eye"></i>
+              <i class="fas fa-download"></i>
+              <i class="far fa-trash-alt"></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div
+      class="flex flex-col sm:flex-row items-center justify-end gap-2 mt-8 space-y-4 sm:space-y-0 sm:space-x-2 border-t-2 p-4"
+    >
+      <div class="flex items-center space-x-4">
+        <button class="font-bold">1</button>
+        <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+          2
+        </button>
+        <button [ngStyle]="{ color: colors.subtitle }" class="font-medium">
+          3
+        </button>
+        <span [ngStyle]="{ color: colors.subtitle }" class="">.....</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <button
+          [ngStyle]="{ color: colors.subtitle }"
+          class="flex items-center space-x-2 px-4 py-2 rounded-lg border-2 font-medium"
+        >
+          <span>←</span>
+          <span>Previous</span>
+        </button>
+        <button
+          [ngStyle]="{ color: colors.subtitle }"
+          class="flex items-center space-x-2 px-4 py-2 rounded-lg border-2 font-medium"
+        >
+          <span>Next</span>
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

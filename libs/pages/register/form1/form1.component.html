@@ -1,0 +1,146 @@
+<div class="flex w-full justify-between items-center pb-4 border-b-2 mt-2 mb-4">
+  <h3 class="text-lg font-semibold">Personal Details</h3>
+  <button
+    class="bg-[{{
+      colors.primary
+    }}] text-white px-4 py-2 rounded-md font-semibold"
+    (click)="goToNext()"
+  >
+    Save & Next
+  </button>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 ml-0">
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Full Name</label>
+    <input
+      type="text"
+      placeholder="Enter your Name"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Father's Name</label>
+    <input
+      type="text"
+      placeholder="Enter your Father Name"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">CNIC</label>
+    <input
+      type="text"
+      placeholder="00000-0000000-0"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Phone Number</label>
+    <div class="flex border-2 px-2 rounded-md w-full">
+      <select class="border-r outline-none">
+        <option>Pak +92</option>
+      </select>
+
+      <input
+        type="text"
+        placeholder="300-xxxxxxx"
+        class="flex-1 p-2 outline-none"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Date of Birth</label>
+    <input
+      type="text"
+      placeholder="DD/MM/YYYY"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Email</label>
+    <input
+      type="email"
+      placeholder="abd12@gmail.com"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Password</label>
+    <input
+      type="password"
+      placeholder="********"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Confirm Password</label>
+    <input
+      type="password"
+      placeholder="********"
+      class="border-2 py-2 px-4 rounded-md w-full"
+    />
+  </div>
+</div>
+
+<div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Address</label>
+    <textarea
+      placeholder="Enter your address"
+      class="border-2 py-2 px-4 rounded-md w-full h-32 resize-none"
+    ></textarea>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Profile Picture</label>
+    <div
+      class="border-2 py-2 px-4 border-dashed rounded-md flex flex-col items-center justify-center h-32"
+    >
+      <div class="grid grid-cols-1 gap-2 w-full text-center text-sm">
+        <span class=""
+          >Drag & drop files or
+          <span class="font-bold cursor-pointer underline">Browse</span></span
+        >
+        <span class="">Supported formats: JPEG, PNG</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Country</label>
+    <select class="border-2 py-2 px-4 rounded-md w-full">
+      <option>Select Country</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">City</label>
+    <select class="border-2 py-2 px-4 rounded-md w-full">
+      <option>Select City</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Language</label>
+    <select class="border-2 py-2 px-4 rounded-md w-full">
+      <option>Select Language</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="font-medium pb-2">Religion</label>
+    <select class="border-2 py-2 px-4 rounded-md w-full">
+      <option>Select Religion</option>
+    </select>
+  </div>
+</div>
