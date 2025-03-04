@@ -10,7 +10,114 @@ export class Form1Component {
   colors = colors;
   @Output() nextStep = new EventEmitter<void>();
 
+  // declaration Form fields
+  fullName: string = '';
+  fatherName: string = '';
+  cnic: string = '';
+  phoneNumber: string = '';
+  dateOfBirth: string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
+  address: string = '';
+  profilePicture: File | null = null;
+  country: string = '';
+  city: string = '';
+  language: string = '';
+  religion: string = '';
+
+  // Dropdown options
+  countries: string[] = ['Pakistan'];
+  cities: string[] = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi'];
+  languages: string[] = ['Urdu', 'English', 'Punjabi', 'Sindhi'];
+  religions: string[] = ['Islam', 'Christianity', 'Hinduism'];
+
+
+  // CNIC formatting
+  formatCNIC() {
+    let cnicValue = this.cnic.replace(/\D/g, ''); // Remove non-digits
+    if (cnicValue.length > 5) {
+      cnicValue = cnicValue.slice(0, 5) + '-' + cnicValue.slice(5);
+    }
+    if (cnicValue.length > 13) {
+      cnicValue = cnicValue.slice(0, 13) + '-' + cnicValue.slice(13);
+    }
+    this.cnic = cnicValue.slice(0, 15); // Limit to 15 characters
+  }
+
+  // Phone number formatting
+  formatPhoneNumber() {
+    let phoneValue = this.phoneNumber.replace(/\D/g, ''); // Remove non-digits
+    if (phoneValue.length > 3) {
+      phoneValue = phoneValue.slice(0, 3) + '-' + phoneValue.slice(3);
+    }
+    this.phoneNumber = phoneValue.slice(0, 11); // Limit to 11 characters
+  }
+
+
+
+  // Form validation
+  validateForm(): boolean {
+    if (this.fullName.length < 3) {
+      alert('Name must be greater than 3 characters');
+      return false;
+    }
+    if (this.fatherName.length < 3) {
+      alert('Father name must be greater than 3 characters');
+      return false;
+    }
+    if (!/^[0-9]{5}-[0-9]{7}-[0-9]$/.test(this.cnic)) {
+      alert('Invalid CNIC format.');
+      return false;
+    }
+    if (!/^[0-9]{3}-[0-9]{7}$/.test(this.phoneNumber)) {
+      alert('Invalid Phone Number format.');
+      return false;
+    }
+    if (!this.dateOfBirth) {
+      alert('Please enter your date of birth');
+      return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email)) {
+      alert('Invalid Email Address');
+      return false;
+    }
+    if (this.password.length < 6) {
+      alert('Password must be at least 6 characters long');
+      return false;
+    }
+    if (this.password !== this.confirmPassword) {
+      alert('Passwords do not match');
+      return false;
+    }
+    if (this.address.length < 1) {
+      alert('Please enter address');
+      return false;
+    }
+    if (!this.country) {
+      alert('Please select a country');
+      return false;
+    }
+    if (!this.city) {
+      alert('Please select a city');
+      return false;
+    }
+    if (!this.language) {
+      alert('Please select a language');
+      return false;
+    }
+    if (!this.religion) {
+      alert('Please select a religion');
+      return false;
+    }
+    return true;
+  }
+
+
+
   goToNext() {
-    this.nextStep.emit();
+    if (this.validateForm()) {
+      this.nextStep.emit();
+    }
   }
 }

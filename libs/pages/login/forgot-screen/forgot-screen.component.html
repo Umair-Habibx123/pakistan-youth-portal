@@ -1,6 +1,6 @@
 <div class="grid grid-cols-12 rounded-lg min-h-screen">
   <!-- Left Section: Login Form -->
-   
+
   <div
     class="col-span-12 md:col-span-6 flex flex-col px-4 sm:px-8 md:px-12 lg:px-28 justify-center h-screen"
   >
@@ -19,22 +19,22 @@
     <h2 class="text-lg mb-4">Enter Email</h2>
     <input
       type="email"
+      [(ngModel)]="email"
       placeholder="admin@pakistanyouthportal.com"
       class="w-full border p-3 rounded-md mb-4"
     />
 
-    <a routerLink="/entercode" routerLinkActive="active-link" href="#">
-      <button
-        [ngStyle]="{ 'background-color': colors.primary, color: colors.white }"
-        class="w-full py-3 rounded-md mb-4"
-      >
-        Get Code
-      </button>
-    </a>
+    <button
+      [ngStyle]="{ 'background-color': colors.primary, color: colors.white }"
+      class="w-full py-3 rounded-md mb-4"
+      (click)="onSendCode()"
+    >
+      Get Code
+    </button>
   </div>
 
   <div
-  [ngStyle]="{ 'Background-color': colors.gray100 }"
+    [ngStyle]="{ 'Background-color': colors.gray100 }"
     class="col-span-12 md:col-span-6 lg:col-span-6 lg:flex lg:flex-col hidden md:flex md:flex-col px-4 sm:px-8 py-8 sm:py-12 relative h-screen overflow-hidden"
   >
     <h1

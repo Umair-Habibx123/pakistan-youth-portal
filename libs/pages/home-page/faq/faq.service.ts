@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 
 
 export class FaqService {
-    private apiUrl = 'http://localhost:3000/locations'; // JSON Server URL
+    private apiUrl = 'http://localhost:3000/Faq'; // JSON Server URL
 
     constructor(private http: HttpClient) { }
 
     getFaqs(): Observable<any> {
-        return this.http.get(this.apiUrl); // Fetching faqs from local server
+        return this.http.get(this.apiUrl);
     }
 }

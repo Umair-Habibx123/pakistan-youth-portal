@@ -22,7 +22,7 @@ export class FAQComponent {
 
   ngOnInit(): void {
     this.FaqService.getFaqs().subscribe(response => {
-      this.faqs = response; // Directly assign response here
+      this.faqs = response;
     });
   }
 }
