@@ -1,0 +1,116 @@
+table tbl_user as user{
+  userID bigint [pk]  
+  email varcahr(50)
+  password varcahr(50)
+  pin int  
+  userRoleID int [ref: > ur.userRoleID]  
+}
+
+table tbl_user_role as ur{
+  userRoleID int [pk]
+  userRoleTitle varchar(50)
+}
+
+table tbl_user_personal_info as upi{
+  userPersonalInfoID bigint [pk]
+  userID bigint [ref :> user.userID]
+  fatherName varchar(50)
+  cnic varchar(15)
+  phoneNumber varchar(15)  
+  dateOfBirth date  
+  country varchar(15)  
+  city varchar(15)  
+  language varchar(15) 
+  religion varchar(15)  
+  eDoc varchar(50)
+}
+
+table tbl_user_education as ue {
+  userEducationID bigint [pk]
+  userID bigint [ref :> user.userID]
+  institutationName varchar(50)
+  degree varchar(50)  
+  eDoc varchar(50) //marksheet, degree
+  educationTypeID int [ref: > et.educationTypeID]
+}
+
+table tbl_education_type as et{
+  educationTypeID int [pk]
+  educationTypeTitle varchar(50)
+}
+
+table tbl_user_experience as uex{
+  userExperienceID bigint [pk]
+  userID bigint [ref: > user.userID]
+  field varchar(50)
+  duration varchar(50)
+  instituteName varchar(50)
+}
+
+table tbl_user_certification as uc{
+  userCertificationID bigint [pk]
+  userID bigint [ref: > user.userID]
+  courseName varchar(50)
+  duration varchar(50)
+  instituteName varchar(50)
+}
+
+table tbl_user_interest as ui {
+  userInterestID bigint [pk]
+  userID bigint [ref :> user.userID]
+  preferedCareer varchar(50)
+}
+
+table tbl_user_hobbies as uhob{
+  userHobbyID bigint [pk]
+  userID bigint [ref: > user.userID]
+  hobbyID int [ref: > hob.hobbyID]
+}
+
+table tbl_hobbies as hob{
+  hobbyID bigint [pk]
+  hobbyTitle varchar(50)
+}
+
+
+table tbl_jobs as jobs{
+  jobID bigint [pk]
+  postedBy bigint [ref :> user.userID]
+  jobName varchar
+  jobType varchar
+  location varchar
+  postingDate date
+  requirement varchar
+  description varchar
+}
+
+
+table tbl_job_application as ja{
+  applicationID bigint [pk]
+  jobId bigint [ref :> jobs.jobID]
+  userId bigint [ref: > user.userID]
+  appliedDate date
+}
+
+table tbl_favourite_jobs as fj{
+  favouriteID bigint [pk]
+  jobId bigint [ref :> jobs.jobID]
+  userId bigint [ref: > user.userID]
+}
+
+
+table tbl_blogs as bl{
+  blogID bigint [pk]
+  postedBy bigint [ref :> user.userID]
+  heading varchar
+  description varchar
+  publishDate date
+}
+
+
+table tbl_trainings as tr{
+  trainingID bigint [pk]
+  postedBY bigint [ref :> user.userID]
+  category varchar
+  description varchar
+}

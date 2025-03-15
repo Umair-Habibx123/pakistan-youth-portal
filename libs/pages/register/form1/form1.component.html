@@ -143,18 +143,32 @@
   <!-- Country -->
   <div class="flex flex-col">
     <label class="font-medium pb-2">Country</label>
-    <select class="border-2 py-2 px-4 rounded-md w-full" [(ngModel)]="country">
-      <option *ngFor="let country of countries">{{ country }}</option>
+    <select
+      class="border-2 py-2 px-4 rounded-md w-full"
+      [(ngModel)]="country"
+      (change)="onCountryChange()"
+    >
+      <option value="" disabled selected>Select Country</option>
+      <option *ngFor="let item of countries" [value]="item.countryId">
+        {{ item.countryName }}
+      </option>
     </select>
   </div>
 
   <!-- City -->
   <div class="flex flex-col">
     <label class="font-medium pb-2">City</label>
-    <select class="border-2 py-2 px-4 rounded-md w-full" [(ngModel)]="city">
-      <option *ngFor="let city of cities">{{ city }}</option>
+    <select
+      class="border-2 py-2 px-4 rounded-md w-full"
+      [(ngModel)]="city"
+      [disabled]="!country"
+    >
+      <option *ngFor="let city of filteredCities" [value]="city">
+        {{ city }}
+      </option>
     </select>
   </div>
+
   <!-- Language -->
   <div class="flex flex-col">
     <label class="font-medium pb-2">Language</label>

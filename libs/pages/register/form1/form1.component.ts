@@ -21,14 +21,35 @@ export class Form1Component {
   confirmPassword: string = '';
   address: string = '';
   profilePicture: File | null = null;
-  country: string = '';
+  country: number | null = null;
   city: string = '';
   language: string = '';
   religion: string = '';
+  filteredCities: string[] = [];
+
 
   // Dropdown options
-  countries: string[] = ['Pakistan'];
-  cities: string[] = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi'];
+  countries: any[] = [
+    { countryId: 'PK', countryName: 'Pakistan' },
+    { countryId: 'IN', countryName: 'India' },
+    { countryId: 'US', countryName: 'USA' }
+  ];
+
+  citiesData: any = [
+    { Id: 'PK', cities: ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi'] },
+    { Id: 'IN', cities: ['Delhi', 'Mumbai', 'Chennai', 'Bangalore'] },
+    { Id: 'US', cities: ['New York', 'Los Angeles', 'Chicago', 'Houston'] },
+  ];
+
+
+  onCountryChange() {
+    this.city = '';
+    const selectedCountry = this.citiesData.find((item: any) => item.Id === this.country);
+    this.filteredCities = selectedCountry ? selectedCountry.cities : [];
+  }
+
+
+
   languages: string[] = ['Urdu', 'English', 'Punjabi', 'Sindhi'];
   religions: string[] = ['Islam', 'Christianity', 'Hinduism'];
 
@@ -116,8 +137,9 @@ export class Form1Component {
 
 
   goToNext() {
-    if (this.validateForm()) {
-      this.nextStep.emit();
-    }
+    // if (this.validateForm()) {
+    // this.nextStep.emit();
+    // }
   }
+
 }
