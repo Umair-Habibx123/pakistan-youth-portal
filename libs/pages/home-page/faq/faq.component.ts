@@ -1,8 +1,6 @@
 import { colors } from '../../../styles/colors';
 import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FaqService } from './faq.service';
 
 
 @Injectable({
@@ -16,13 +14,31 @@ import { FaqService } from './faq.service';
 })
 export class FAQComponent {
   colors = colors;
-  faqs: any[] = [];
 
-  constructor(private router: Router, private FaqService: FaqService) { }
-
-  ngOnInit(): void {
-    this.FaqService.getFaqs().subscribe(response => {
-      this.faqs = response;
-    });
-  }
+  faqs = [
+      {
+        "description": "What is Pakistan Youth Portal?"
+      },
+      {
+        "description": "How can I sign up for a free trial?"
+      },
+      {
+        "description": "What features are in the free trial?"
+      },
+      {
+        "description": "What pricing plans does Pakistan Youth Portal offer?"
+      },
+      {
+        "description": "Is Pakistan Youth Portal compatible with other software?"
+      },
+      {
+        "description": "How secure is my data with Pakistan Youth Portal?"
+      },
+      {
+        "description": "Does Pakistan Youth Portal offer customer support?"
+      },
+      {
+        "description": "Can I customize Pakistan Youth Portal?"
+      }
+    ]
 }

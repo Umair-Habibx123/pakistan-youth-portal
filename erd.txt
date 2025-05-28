@@ -1,3 +1,5 @@
+//dbdiagram
+
 table tbl_user as user{
   userID bigint [pk]  
   email varcahr(50)

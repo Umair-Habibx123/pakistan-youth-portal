@@ -29,12 +29,12 @@ interface CityData {
 export class DashboardComponent implements OnInit {
   colors = colors;
   cards = [
-    { title: 'New Users', value: 645, percentage: '+2.5%', trend: 'up' },
-    { title: 'Business Query', value: 400, percentage: '+2.5%', trend: 'up' },
-    { title: 'Education Query', value: 360, percentage: '+2.5%', trend: 'up' },
-    { title: 'Politics Query', value: 26, percentage: '+2.5%', trend: 'up' },
-    { title: 'Job Offers', value: 26, percentage: '+2.5%', trend: 'up' },
-    { title: 'Training Offers', value: 645, percentage: '-1.5%', trend: 'down' }
+    { title: 'New Students', value: 645, percentage: '+2.5%', trend: 'up' },
+    { title: 'Total Courses', value: 400, percentage: '+2.5%', trend: 'up' },
+    { title: 'Total Universities', value: 360, percentage: '+2.5%', trend: 'up' },
+    { title: 'BS Program', value: 26, percentage: '+2.5%', trend: 'up' },
+    { title: 'MS Program', value: 26, percentage: '+2.5%', trend: 'up' },
+    { title: 'PHD Programs', value: 645, percentage: '-1.5%', trend: 'down' }
   ];
 
   users: Users[] = [

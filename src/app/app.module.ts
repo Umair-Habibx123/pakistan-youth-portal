@@ -52,12 +52,6 @@ import { ContactUsPageComponent } from '../../libs/pages/contact-us-page/contact
 import { FAQPageComponent } from '../../libs/pages/faqpage/faqpage.component';
 import { ConfigurateComponent } from '../../libs/dashboard/admin-dashboard/configurate/configurate.component';
 
-import { SharedServicesAuthModule } from 'libs/shared/services/auth/shared-services-auth/shared-services-auth.module';
-import { SharedServicesDataModule } from 'libs/shared/services/data/shared-services-data/shared-services-data.module';
-import { SharedServicesGlobalDataModule } from 'libs/shared/services/shared-services-global-data/shared-services-global-data.module';
-import { SharedHelpersFieldValidationsModule } from 'libs/shared/helpers/field-validations/shared-helpers-field-validation/shared-helpers-field-validation.module';
-
-
 
 import { BlogService } from '../../libs/services/blog.service';
 
@@ -123,11 +117,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    SharedServicesAuthModule,
-    SharedServicesDataModule,
-    SharedServicesGlobalDataModule,
-    SharedHelpersFieldValidationsModule,
-
     HttpClientModule,
     
   ],
