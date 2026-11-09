@@ -11,7 +11,7 @@ export class JobComponent {
 
   jobs = [
     {
-      logo: '../../../assets/images/comp1.png',
+      logo: 'assets/images/comp1.png',
       title: 'Payroll Accountant',
       location: 'Lahore, Pakistan',
       type: 'Full time',
@@ -26,7 +26,7 @@ export class JobComponent {
         "Proven track record of success in prospecting, cold outreach, and lead generation."
     },
     {
-      logo: '../../../assets/images/comp2.png',
+      logo: 'assets/images/comp2.png',
       title: 'Payroll Accountant',
       location: 'Lahore, Pakistan',
       type: 'Full time',
@@ -41,7 +41,7 @@ export class JobComponent {
         "Proven track record of success in prospecting, cold outreach, and lead generation."
     },
     {
-      logo: '../../../assets/images/comp1.png',
+      logo: 'assets/images/comp1.png',
       title: 'Offensive Security Engineer',
       location: 'Lahore, Pakistan',
       type: 'Full time',

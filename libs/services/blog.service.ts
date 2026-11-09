@@ -8,7 +8,7 @@ export class BlogService {
     private blogs = [
         {
             id: 1,
-            logo: '../../../assets/images/blog1.png',
+            logo: 'assets/images/blog1.png',
             title: 'Three Pillars of User Delight',
             date: new Date(2014, 10, 16),
             description: "As an Outbound Sales Development Representative at Devsinc, you will play a key role in driving our growth " +
@@ -23,7 +23,7 @@ export class BlogService {
         },
         {
             id: 2,
-            logo: '../../../assets/images/blog2.jpg',
+            logo: 'assets/images/blog2.jpg',
             title: ' UX Mapping Methods',
             date: new Date(2017, 8, 24),
             description: "Visual-design principles can be applied consistently throughout the process of creating a polished UX map As an Outbound Sales Development Representative at Devsinc, you will play a key role in driving our growth " +
@@ -38,7 +38,7 @@ export class BlogService {
         },
         {
             id: 3,
-            logo: '../../../assets/images/blog3.jpg',
+            logo: 'assets/images/blog3.jpg',
             title: 'Agile Development Projects and Usability',
             date: new Date(2014, 2, 13),
             description: "Agile methods aim to overcome usability barriers in traditional development, but pose new threats to user experience quality.",

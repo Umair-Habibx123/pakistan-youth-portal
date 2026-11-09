@@ -23,13 +23,13 @@ export class TestimonialsComponent {
 
 
   testimonials: Job[] = [
-    { name: 'Umair Habib', designation: 'Manager',  description: 'Business', image: '../../../../assets/images/IMG_20240309_200355.jpg' },
-    { name: 'Umair Habib', designation: 'UX Designer',  description: 'Education', image:  '../../../../assets/images/IMG_20240309_200355.jpg'  },
-    { name: 'Umair Habib', designation: 'CEO of Alpha Rages',  description: 'Business', image:  '../../../../assets/images/IMG_20240309_200355.jpg'  },
-    { name: 'Umair Habib', designation: 'NHA',  description: 'Education', image:  '../../../../assets/images/IMG_20240309_200355.jpg'  },
-    { name: 'Umair Habib', designation: 'General Manger',  description: 'Business', image:  '../../../../assets/images/IMG_20240309_200355.jpg'  },
-    { name: 'Umair Habib', designation: 'Software Engineer',  description: 'Education', image:  '../../../../assets/images/IMG_20240309_200355.jpg'  },
-    { name: 'Umair Habib', designation: 'Student',  description: 'Business', image:  '../../../../assets/images/IMG_20240309_200355.jpg'  },
+    { name: 'Umair Habib', designation: 'Manager',  description: 'Business', image: 'assets/images/IMG_20240309_200355.jpg' },
+    { name: 'Umair Habib', designation: 'UX Designer',  description: 'Education', image:  'assets/images/IMG_20240309_200355.jpg'  },
+    { name: 'Umair Habib', designation: 'CEO of Alpha Rages',  description: 'Business', image:  'assets/images/IMG_20240309_200355.jpg'  },
+    { name: 'Umair Habib', designation: 'NHA',  description: 'Education', image:  'assets/images/IMG_20240309_200355.jpg'  },
+    { name: 'Umair Habib', designation: 'General Manger',  description: 'Business', image:  'assets/images/IMG_20240309_200355.jpg'  },
+    { name: 'Umair Habib', designation: 'Software Engineer',  description: 'Education', image:  'assets/images/IMG_20240309_200355.jpg'  },
+    { name: 'Umair Habib', designation: 'Student',  description: 'Business', image:  'assets/images/IMG_20240309_200355.jpg'  },
 
  
   ];

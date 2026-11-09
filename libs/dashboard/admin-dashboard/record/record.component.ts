@@ -31,8 +31,8 @@ export class RecordComponent {
   ];
 
   users: Users[] = [
-    { name: 'Senior UI/UX Designer', email: 'adn32@gmail.com', contact: '03000565431', cities: "Islamabad", category: 'Business', image: '../../../../assets/images/abd.jpeg' },
-    { name: 'Senior UI/UX Designer', email: 'adn32@gmail.com', contact: '03000565431', cities: "Islamabad", category: 'Education', image: '../../../../assets/images/abd.jpeg' }
+    { name: 'Senior UI/UX Designer', email: 'adn32@gmail.com', contact: '03000565431', cities: "Islamabad", category: 'Business', image: 'assets/images/abd.jpeg' },
+    { name: 'Senior UI/UX Designer', email: 'adn32@gmail.com', contact: '03000565431', cities: "Islamabad", category: 'Education', image: 'assets/images/abd.jpeg' }
   ];
 }
   

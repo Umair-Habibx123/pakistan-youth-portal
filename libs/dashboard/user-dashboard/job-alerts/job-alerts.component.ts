@@ -21,14 +21,14 @@ export class JobAlertsComponent {
 
 
   jobs: Job[] = [
-    { name: 'Networking Engineer', location: 'Lahore, Pakistan', type: 'Full Time', isOpen: true, date: '25/01/2025', image: '../../../../assets/images/comp-logo2.png' },
-    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Part Time', isOpen: false, date: '22/01/2025', image: '../../../../assets/images/comp-logo2.png' },
-    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Hybrid', isOpen: false, date: '22/01/2025', image: '../../../../assets/images/comp-logo2.png' },
-    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Remote', isOpen: false, date: '22/01/2025', image: '../../../../assets/images/comp-logo2.png' },
-    { name: 'Networking Engineer', location: 'Lahore, Pakistan', type: 'Full Time', isOpen: true, date: '25/01/2025', image: '../../../../assets/images/comp-logo2.png' },
-    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Part Time', isOpen: false, date: '22/01/2025', image: '../../../../assets/images/comp-logo2.png' },
-    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Hybrid', isOpen: false, date: '22/01/2025', image: '../../../../assets/images/comp-logo2.png' },
-    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Remote', isOpen: false, date: '22/01/2025', image: '../../../../assets/images/comp-logo2.png' },
+    { name: 'Networking Engineer', location: 'Lahore, Pakistan', type: 'Full Time', isOpen: true, date: '25/01/2025', image: 'assets/images/comp-logo2.png' },
+    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Part Time', isOpen: false, date: '22/01/2025', image: 'assets/images/comp-logo2.png' },
+    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Hybrid', isOpen: false, date: '22/01/2025', image: 'assets/images/comp-logo2.png' },
+    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Remote', isOpen: false, date: '22/01/2025', image: 'assets/images/comp-logo2.png' },
+    { name: 'Networking Engineer', location: 'Lahore, Pakistan', type: 'Full Time', isOpen: true, date: '25/01/2025', image: 'assets/images/comp-logo2.png' },
+    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Part Time', isOpen: false, date: '22/01/2025', image: 'assets/images/comp-logo2.png' },
+    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Hybrid', isOpen: false, date: '22/01/2025', image: 'assets/images/comp-logo2.png' },
+    { name: 'Sr. UXUI Designer', location: 'Lahore, Pakistan', type: 'Remote', isOpen: false, date: '22/01/2025', image: 'assets/images/comp-logo2.png' },
 
   ];
 

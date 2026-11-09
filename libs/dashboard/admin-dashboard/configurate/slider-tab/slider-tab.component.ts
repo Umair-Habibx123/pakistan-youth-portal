@@ -13,10 +13,10 @@ export class SliderTabComponent {
   @Output() addNewSlider = new EventEmitter<void>();
 
   slides = [
-    { logo: '../../../assets/images/slider.jpeg' },
-    { logo: '../../../assets/images/slider.jpeg' },
-    { logo: '../../../assets/images/slider.jpeg' },
-    { logo: '../../../assets/images/slider.jpeg' },
+    { logo: 'assets/images/slider.jpeg' },
+    { logo: 'assets/images/slider.jpeg' },
+    { logo: 'assets/images/slider.jpeg' },
+    { logo: 'assets/images/slider.jpeg' },
   ];
 
   openModal() {

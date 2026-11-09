@@ -11,7 +11,7 @@ export class TrainingComponent {
   traning = [
 
     {
-      logo: '../../../assets/images/traning1.jpg',
+      logo: 'assets/images/traning1.jpg',
       title: 'Figma UI UX Design Training to get job in Your Career',
       category: 'Traning Category',
       description: "As an Outbound Sales Development Representative at Devsinc, you will play a key role in driving our growth " +
@@ -21,7 +21,7 @@ export class TrainingComponent {
         "daily to maintain a steady flow of potential prospects.",
     },
     {
-      logo: '../../../assets/images/traning2.jpg',
+      logo: 'assets/images/traning2.jpg',
       title: 'Figma UI UX Design Training to get job in Your Career',
       category: 'Traning Category',
       description: "As an Outbound Sales Development Representative at Devsinc, you will play a key role in driving our growth " +
@@ -31,7 +31,7 @@ export class TrainingComponent {
         "daily to maintain a steady flow of potential prospects.",
     },
     {
-      logo: '../../../assets/images/traning3.jpg',
+      logo: 'assets/images/traning3.jpg',
       title: 'Figma UI UX Design Training to get job in Your Career',
       category: 'Traning Category',
       description: "As an Outbound Sales Development Representative at Devsinc, you will play a key role in driving our growth " +
@@ -41,7 +41,7 @@ export class TrainingComponent {
         "daily to maintain a steady flow of potential prospects.",
     },
     {
-      logo: '../../../assets/images/traning3.jpg',
+      logo: 'assets/images/traning3.jpg',
       title: 'Figma UI UX Design Training to get job in Your Career',
       category: 'Traning Category',
       description: "As an Outbound Sales Development Representative at Devsinc, you will play a key role in driving our growth " +
@@ -51,7 +51,7 @@ export class TrainingComponent {
         "daily to maintain a steady flow of potential prospects.",
     },
     {
-      logo: '../../../assets/images/traning1.jpg',
+      logo: 'assets/images/traning1.jpg',
       title: 'Figma UI UX Design Training to get job in Your Career',
       category: 'Traning Category',
       description: "As an Outbound Sales Development Representative at Devsinc, you will play a key role in driving our growth " +
@@ -61,7 +61,7 @@ export class TrainingComponent {
         "daily to maintain a steady flow of potential prospects.",
     },
     {
-      logo: '../../../assets/images/traning2.jpg',
+      logo: 'assets/images/traning2.jpg',
       title: 'Figma UI UX Design Training to get job in Your Career',
       category: 'Traning Category',
       description: "As an Outbound Sales Development Representative at Devsinc, you will play a key role in driving our growth " +

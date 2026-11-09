@@ -13,17 +13,17 @@ export class AboutUsTabComponent {
 
   aboutUs = [
     {
-      image: '../../../assets/images/about1.jpeg',
+      image: 'assets/images/about1.jpeg',
       heading: "Country Name will go here..",
       description: "Slider description will go here..",
     },
     {
-      image: '../../../assets/images/about2.jpeg',
+      image: 'assets/images/about2.jpeg',
       heading: "Country Name will go here..",
       description: "Slider description will go here..",
     },
     {
-      image: '../../../assets/images/about3.jpeg',
+      image: 'assets/images/about3.jpeg',
       heading: "Country Name will go here..",
       description: "Slider description will go here..",
     },
